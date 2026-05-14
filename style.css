@@ -1,0 +1,55 @@
+.navigation {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 100px;
+}
+
+.nav-item {
+    position: relative; /* "Mỏ neo" cho tooltip */
+    cursor: pointer;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* --- LOGIC TOOLTIP (CSS ONLY) --- */
+.tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px); /* Đẩy lên trên và cách ra 10px */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Dùng translateY để chuẩn bị cho slide-in */
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    
+    /* Hiệu ứng ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Tam giác phía dưới */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+/* Kích hoạt khi Hover */
+.nav-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}

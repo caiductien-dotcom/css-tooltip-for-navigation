@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navigation">
+    <!-- Cách làm 1: CSS Only (Nội dung tooltip nằm trong HTML) -->
+    <div class="nav-item">
+        <span class="nav-link">Home</span>
+        <div class="tooltip">Here is everything I have built</div>
+    </div>
+
+    <span class="separator">•</span>
+
+    <!-- Cách làm 2: Dùng JS (Dữ liệu nằm trong data-attribute) -->
+    <div class="nav-item js-tooltip" data-tip="View our latest works">
+        <span class="nav-link">Projects</span>
+    </div>
+
+    <span class="separator">•</span>
+
+    <div class="nav-item">
+        <span class="nav-link">Blog</span>
+        <div class="tooltip">Read our latest articles</div>
+    </div>
+</nav>
+</body>
+<script src="script.js"></script>
+</html>
